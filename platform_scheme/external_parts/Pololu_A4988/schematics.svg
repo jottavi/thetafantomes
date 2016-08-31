@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="57.6px" height="71.8px" viewBox="-268 385.1 57.6 71.8" enable-background="new -268 385.1 57.6 71.8"
+	 xml:space="preserve">
+<g id="schematic" xmlns:xml="http://www.w3.org/XML/1998/namespace">
+	
+		<rect id="part_symbol" x="-260.8" y="389.2" fill="#FFFFFF" stroke="#000000" stroke-width="0.9457" stroke-linecap="round" width="43.2" height="63.6"/>
+	<g id="pins">
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-217.6" y1="402.4" x2="-210.4" y2="402.4"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-217.6" y1="395.2" x2="-210.4" y2="395.2"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-217.6" y1="416.8" x2="-210.4" y2="416.8"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-217.6" y1="409.6" x2="-210.4" y2="409.6"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-217.6" y1="424" x2="-210.4" y2="424"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-217.6" y1="438.4" x2="-210.4" y2="438.4"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-217.6" y1="431.2" x2="-210.4" y2="431.2"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-217.6" y1="445.6" x2="-210.4" y2="445.6"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-268" y1="402.4" x2="-260.8" y2="402.4"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-268" y1="395.2" x2="-260.8" y2="395.2"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-268" y1="416.8" x2="-260.8" y2="416.8"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-268" y1="409.6" x2="-260.8" y2="409.6"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-268" y1="424" x2="-260.8" y2="424"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-268" y1="438.4" x2="-260.8" y2="438.4"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-268" y1="431.2" x2="-260.8" y2="431.2"/>
+		
+			<line fill="none" stroke="#555555" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round" x1="-268" y1="445.6" x2="-260.8" y2="445.6"/>
+	</g>
+	<g id="pin_numbers">
+		<text transform="matrix(1 0 0 1 -214.8369 393.7342)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">8</text>
+		<text transform="matrix(1 0 0 1 -265.2251 393.6404)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">9</text>
+		<text transform="matrix(1 0 0 1 -266.0522 400.7703)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">10</text>
+		<text transform="matrix(1 0 0 1 -266.0522 408.2742)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">11</text>
+		<text transform="matrix(1 0 0 1 -266.0522 415.4031)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">12</text>
+		<text transform="matrix(1 0 0 1 -266.0522 422.407)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">13</text>
+		<text transform="matrix(1 0 0 1 -266.0522 429.5354)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">14</text>
+		<text transform="matrix(1 0 0 1 -266.0522 437.0393)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">15</text>
+		<text transform="matrix(1 0 0 1 -266.0522 444.1692)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">16</text>
+		<text transform="matrix(1 0 0 1 -214.8379 400.7703)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">7</text>
+		<text transform="matrix(1 0 0 1 -214.8379 408.2742)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">6</text>
+		<text transform="matrix(1 0 0 1 -214.8379 415.4031)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">5</text>
+		<text transform="matrix(1 0 0 1 -214.8379 422.407)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">4</text>
+		<text transform="matrix(1 0 0 1 -214.8379 429.5354)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">3</text>
+		<text transform="matrix(1 0 0 1 -214.8379 437.0393)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">2</text>
+		<text transform="matrix(1 0 0 1 -214.8379 444.1692)" fill="#555555" font-family="'DroidSans'" font-size="3.0017">1</text>
+	</g>
+	<g id="pin_labels">
+		<text transform="matrix(1 0 0 1 -258.7358 396.2654)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">EN</text>
+		<text transform="matrix(1 0 0 1 -258.7769 403.5721)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">MS1</text>
+		<text transform="matrix(1 0 0 1 -258.7358 410.658)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">MS2</text>
+		<text transform="matrix(1 0 0 1 -258.7769 417.9656)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">MS3</text>
+		<text transform="matrix(1 0 0 1 -258.7358 425.0804)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">RST</text>
+		<text transform="matrix(1 0 0 1 -258.7769 432.388)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">SLP</text>
+		<text transform="matrix(1 0 0 1 -258.7358 439.4739)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">STEP</text>
+		<text transform="matrix(1 0 0 1 -258.7769 446.7815)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">DIR</text>
+		<text transform="matrix(1 0 0 1 -231.9004 396.2654)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">VMOT</text>
+		<text transform="matrix(1 0 0 1 -229.2559 403.5721)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">GND</text>
+		<text transform="matrix(1 0 0 1 -225.0225 410.658)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">2B</text>
+		<text transform="matrix(1 0 0 1 -225.0039 417.9656)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">2A</text>
+		<text transform="matrix(1 0 0 1 -224.9629 425.0804)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">1A</text>
+		<text transform="matrix(1 0 0 1 -225.0635 432.388)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">1B</text>
+		<text transform="matrix(1 0 0 1 -228.4619 439.4739)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">VDD</text>
+		<text transform="matrix(1 0 0 1 -229.2559 446.7815)" fill="#555555" font-family="'DroidSans'" font-size="4.5025">GND</text>
+	</g>
+	<text transform="matrix(1 0 0 1 -247.7017 418.0691)" font-family="'DroidSans'" font-size="6.0034">Pololu</text>
+	<text transform="matrix(1 0 0 1 -247.6226 425.2727)" font-family="'DroidSans'" font-size="6.0034">A4988</text>
+</g>
+</svg>
