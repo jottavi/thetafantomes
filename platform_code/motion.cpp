@@ -93,14 +93,14 @@ void Motion_C::lineSpeed() {
 		// When the difference between the reaching speed and the actual speed is big, reach it fast
 		// else, do it slowly
 		if (this->speed < this->reachingSpeed) { // When speed is going forwards
-			if (abs(this->reachingSpeed - this->speed) > 20) {
-				this->speed += 8;
+			if (abs(this->reachingSpeed - this->speed) > 50) {
+				this->speed += 50;
 			} else {
 				this->speed += 1;
 			}
 		} else if (this->speed > this->reachingSpeed) { // When speed is going backwards
-			if (abs(this->reachingSpeed - this->speed) > 20) {
-				this->speed -= 8;
+			if (abs(this->reachingSpeed - this->speed) > 50) {
+				this->speed -= 50;
 			} else {
 				this->speed -= 1;
 			}

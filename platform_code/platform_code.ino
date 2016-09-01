@@ -107,7 +107,7 @@ void loop() {
 
 	// Invert direction when an object is in the way
 	// sonars.cpp - motion.cpp
-	sonars_.correct(motion_);
+	// sonars_.correct(motion_);
 
 	// Move according to the motion calculated and save it
 	// motors.cpp - motion.cpp

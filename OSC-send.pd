@@ -6,90 +6,102 @@
 #X msg -292 45 typetags \$1;
 #X obj -292 23 tgl 15 0 empty empty empty 17 7 0 10 -257985 -258113
 -1 0 1;
-#X obj -258 -200 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+#X obj -298 -220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
-#X obj -258 -149 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj -298 -169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X floatatom -208 -46 10 0 0 0 - - -;
 #X obj 14 120 import mrpeach;
-#X obj -82 -200 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+#X obj -112 -220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj -25 -117 f;
-#X obj -82 -149 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj -112 -169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X floatatom -28 -39 5 0 0 0 - - -;
 #X obj -208 -109 f;
-#X obj -2 -174 receive angle;
+#X obj -22 -192 receive angle;
 #X msg -25 -90 \$1 100;
 #X obj -208 -17 int;
 #X obj -29 -11 int;
-#X obj -186 -176 receive speed;
-#X obj -258 -173 metro 100;
-#X obj -82 -173 metro 100;
+#X obj -206 -194 receive speed;
+#X obj -298 -193 metro 100;
+#X obj -112 -193 metro 100;
 #X msg -208 -82 \$1 100;
-#X obj 113 -200 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
-#X obj 170 -117 f;
-#X obj 113 -149 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 83 -220 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 160 -117 f;
+#X obj 83 -169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 167 -39 5 0 0 0 - - -;
-#X obj 193 -174 receive angle;
-#X msg 170 -90 \$1 100;
-#X obj 166 -11 int;
-#X obj 113 -173 metro 100;
-#X obj 302 -201 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+#X floatatom 157 -39 5 0 0 0 - - -;
+#X obj 163 -194 receive angle;
+#X msg 160 -90 \$1 100;
+#X obj 156 -11 int;
+#X obj 272 -221 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
-#X obj 359 -118 f;
-#X obj 302 -150 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 339 -118 f;
+#X obj 272 -170 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 356 -40 5 0 0 0 - - -;
-#X obj 382 -175 receive angle;
-#X msg 359 -91 \$1 100;
-#X obj 355 -12 int;
-#X obj 302 -174 metro 100;
-#X msg 356 16 send /y \$1;
+#X floatatom 336 -40 5 0 0 0 - - -;
+#X obj 362 -195 receive angle;
+#X msg 339 -91 \$1 100;
+#X obj 335 -12 int;
+#X msg 336 16 send /y \$1;
 #X msg -208 19 send /speed \$1;
 #X msg -28 17 send /angle \$1;
-#X msg 167 17 send /x \$1;
-#X msg -178 120 connect 192.168.168.255 7110;
+#X msg 157 17 send /x \$1;
+#X obj 83 -145 random 127;
+#X obj 272 -146 random 127;
+#X obj -112 -146 random 360;
+#X obj -106 -94 - 180;
+#X obj -297 -139 random 20000;
+#X obj -297 -90 - 10000;
+#X obj 272 -194 metro 5;
+#X obj 83 -193 metro 5;
+#X msg -178 120 connect 192.168.168.202 7110;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 2 0;
 #X connect 4 0 3 0;
 #X connect 5 0 19 0;
-#X connect 6 0 13 0;
+#X connect 6 0 44 0;
 #X connect 7 0 16 0;
 #X connect 9 0 20 0;
 #X connect 10 0 15 0;
-#X connect 11 0 10 0;
+#X connect 11 0 42 0;
 #X connect 12 0 17 0;
 #X connect 13 0 21 0;
 #X connect 14 0 10 1;
 #X connect 15 0 12 0;
-#X connect 16 0 39 0;
-#X connect 17 0 40 0;
+#X connect 16 0 37 0;
+#X connect 17 0 38 0;
 #X connect 18 0 13 1;
 #X connect 19 0 6 0;
 #X connect 20 0 11 0;
 #X connect 21 0 7 0;
-#X connect 22 0 29 0;
+#X connect 22 0 47 0;
 #X connect 23 0 27 0;
-#X connect 24 0 23 0;
+#X connect 24 0 40 0;
 #X connect 25 0 28 0;
 #X connect 26 0 23 1;
 #X connect 27 0 25 0;
-#X connect 28 0 41 0;
-#X connect 29 0 24 0;
-#X connect 30 0 37 0;
-#X connect 31 0 35 0;
-#X connect 32 0 31 0;
-#X connect 33 0 36 0;
-#X connect 34 0 31 1;
-#X connect 35 0 33 0;
-#X connect 36 0 38 0;
-#X connect 37 0 32 0;
+#X connect 28 0 39 0;
+#X connect 29 0 46 0;
+#X connect 30 0 34 0;
+#X connect 31 0 41 0;
+#X connect 32 0 35 0;
+#X connect 33 0 30 1;
+#X connect 34 0 32 0;
+#X connect 35 0 36 0;
+#X connect 36 0 2 0;
+#X connect 37 0 2 0;
 #X connect 38 0 2 0;
 #X connect 39 0 2 0;
-#X connect 40 0 2 0;
-#X connect 41 0 2 0;
-#X connect 42 0 0 0;
+#X connect 40 0 25 0;
+#X connect 41 0 32 0;
+#X connect 42 0 43 0;
+#X connect 43 0 12 0;
+#X connect 44 0 45 0;
+#X connect 45 0 7 0;
+#X connect 46 0 31 0;
+#X connect 47 0 24 0;
+#X connect 48 0 0 0;
