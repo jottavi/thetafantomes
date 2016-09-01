@@ -36,9 +36,11 @@ void Laser_C::update(Motion_C motion_) {
 
 void Laser_C::init() {
 	// Initialize the laser DMX channels (see the Fat Beamer documentation)
-	DmxSimple.write(this->CHANNELS.SETUP, 192);
+	DmxSimple.write(this->CHANNELS.SETUP, 193);
 	DmxSimple.write(this->CHANNELS.X, 191);
+	DmxSimple.write(this->CHANNELS.X, 0);
 	DmxSimple.write(this->CHANNELS.Y, 191);
+	DmxSimple.write(this->CHANNELS.Y, 0);
 	DmxSimple.write(this->CHANNELS.SPEED, 196);
 }
 

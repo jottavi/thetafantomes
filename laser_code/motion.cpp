@@ -3,10 +3,10 @@
 Motion_C::Motion_C() :
 	x(0),
 	y(0),
-	speed(0),
+	speed(196),
 	previousX(0),
 	previousY(0),
-	previousSpeed(0)
+	previousSpeed(196)
 {}
 
 
@@ -60,15 +60,15 @@ int Motion_C::calibrateAxis(int axis) {
 
 int Motion_C::calibrateSpeed(int speed) {
 	// floor eventual overloading speed values
-	if (speed > 170) {
-		speed = 170;
+	if (speed > 171) {
+		speed = 171;
 	}
 	else if (speed < 0) {
 		speed = 0;
 	}
 
-	// The value should start at 26 (see the Fat Beamer documentation)
-	return speed + 26;
+	// The value should start at 25 (see the Fat Beamer documentation)
+	return speed + 25;
 }
 
 

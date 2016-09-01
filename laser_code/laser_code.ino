@@ -1,4 +1,5 @@
 // Copyright (C) 2012, 2013 APO-33
+// Author : Matisse V (http://github.com/matissev)
 // This file is part of the Thêta Fantômes project.
 //
 // Thêta Fantômes is free software: you can redistribute it and/or modify
