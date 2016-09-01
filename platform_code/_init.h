@@ -1,10 +1,17 @@
 #ifndef _init
 #define _init
 
-// Program parameters
+// ------------------------------------- Program parameters -------------------------------------
 
-#define PLAYER_ID 2
-#define DEBUG true
+
+// This is where you change the player number
+// It will affect the HOSTNAME and the IP which it's listening to
+// DO NOT SWITCH THE WIFI MODULES (ESP8266), AND USE THE SAME PLAYER ID AS THE PLATEFORM NAME
+// BECAUSE IT HAS THE RIGHT MAC ADDRESS REFERING TO THE RIGHT IP ADDRESS
+#define PLAYER_ID 1
+
+
+// WIFI
 
 #define WIFI_SSID F("Theta")
 #define WIFI_PASSWORD F("fant0m3s")
@@ -24,9 +31,11 @@
 	#define HOSTNAME "Tango"
 #endif
 
+
+// CONSTANTS
+
 #define MAX_DISTANCE 400
 #define MAX_SPEED 10000
-#define SPEED_THRESHOLD 31
 
 #define FORWARDS true
 #define BACKWARDS false
@@ -43,7 +52,7 @@
 #define SONAR10_ANGLE  -130
 
 
-// Pins
+// PINS
 
 #define WIFI_RESET_PIN 6
 #define WIFI_LED_PIN 13

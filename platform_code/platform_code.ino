@@ -9,7 +9,7 @@
 // with
 // TIMER3_COMPA_vect
 
-#include "_init.h"
+#include "_init.h" // This file contain the constants, like the SSID, the pinout, etc..
 #include "wifi.h"
 #include "osc.h"
 #include "motors.h"
@@ -17,7 +17,7 @@
 #include "sonars.h"
 
 
-// ------------------------------------- VARIABLES -------------------------------------
+// ------------------------------------- CLASS -------------------------------------
 
 
 // Communication
@@ -33,6 +33,7 @@ Motion_C motion_;
 // Sensors
 Sonars_C sonars_;
 
+
 // ------------------------------------- SETUP -------------------------------------
 
 void setup() {
@@ -42,9 +43,9 @@ void setup() {
 	Serial.println("************************ Starting setup ************************");
 	Serial.println("****************************************************************\n");
 
-	motors_.init();
-	wifi_.init();
-	sonars_.init();
+	motors_.init(); // Setting up the motors pins
+	wifi_.init(); // Connecting to the wifi network
+	sonars_.init(); // Checking the sonars condition
 
 	Serial.println("****************************************************************");
 	Serial.println("*************************** Setup OK ***************************"); // Everything's up and running
@@ -55,20 +56,17 @@ void setup() {
 // ------------------------------------- LOOP --------------------------------------
 
 void loop() {
-	if (osc_.getIp() == PLAYER_IP) {
-		motion_.update(osc_);
-	} else {
-		osc_.clean();
-	}
+	// Update the motion values with the incoming message, line it
+	motion_.update(osc_); // motion.cpp - osc.cpp
 
-	sonars_.correct(motion_);
+	// Invert direction when an object is in the way
+	sonars_.correct(motion_); // sonars.cpp - motion.cpp
 
-	if (motion_.hasChanged()) {
-		motors_.move(motion_);
-		motion_.saveValues();
-	}
+	// Move according to the motion calculated and save it
+	motors_.move(motion_); // motors.cpp - motion.cpp
 }
 
 void serialEvent3() {
-	wifi_.receive(osc_); // Grab and parse the OSC message from the Serial (osc.cpp)
+	// Grab and parse the OSC message from the Serial
+	wifi_.receive(osc_); // wifi.cpp - osc.cpp
 }

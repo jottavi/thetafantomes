@@ -13,40 +13,52 @@ Motion_C::Motion_C() :
 
 
 void Motion_C::update(Osc_C osc_) {
-	String route = osc_.getRoute();
-	int value = osc_.getValue();
+	// Is there any incoming message ?
+	if (osc_.getIp() != "") {
+		// Then grab the value and update the speed or the angle
 
-	if (route == "/speed") {
-		this->setSpeed(value);
-	} else if (route == "/angle") {
-		this->setAngle(value);
+		String route = osc_.getRoute();
+		int value = osc_.getValue();
+
+		if (route == "/speed") {
+			this->setSpeed(value);
+		} else if (route == "/angle") {
+			this->setAngle(value);
+		}
+
+		// Then just trash the message
+		osc_.clean();
 	}
 
+	// In any case, line the speed to avoid brutal changes for the motors
 	this->lineSpeed();
-
-	osc_.clean();
 }
 
 
 void Motion_C::setSpeed(int speed) {
+	// Calibrate the speed and update it
+	// The polarity is either 1 or -1, and is switched when an object is detected
 	speed = this->calibrateSpeed(speed) * this->polarity;
 	this->reachingSpeed = speed;
 }
 
 
 void Motion_C::setAngle(int angle) {
+	// Calibrate the angle and update it
+	// The polarity is either 1 or -1, and is switched when an object is detected
 	angle = this->calibrateAngle(angle) * this->polarity;
 	this->angle = angle;
 }
 
 
 void Motion_C::switchPolarity() {
+	// The polarity is either 1 or -1, and is switched when an object is detected
 	this->polarity = -this->polarity;
 }
 
 
 int Motion_C::calibrateSpeed(int speed) {
-	// floor eventual overloading speed values
+	// floor any eventual overloading speed values
 	if (speed > MAX_SPEED) {
 		speed = MAX_SPEED;
 	} else if (speed < -MAX_SPEED) {
@@ -54,7 +66,7 @@ int Motion_C::calibrateSpeed(int speed) {
 	}
 
 	// bring speed to 0 when the value is under 31 (= tone limit : https://www.arduino.cc/en/Reference/Tone)
-	if (abs(speed) < SPEED_THRESHOLD) {
+	if (abs(speed) < 31) {
 		speed = 0;
 	}
 
@@ -63,7 +75,7 @@ int Motion_C::calibrateSpeed(int speed) {
 
 
 int Motion_C::calibrateAngle(int angle) {
-	// floor eventual overloading angle values
+	// floor any eventual overloading angle values
 	if (angle > 180) {
 		angle = 180;
 	}
@@ -76,32 +88,40 @@ int Motion_C::calibrateAngle(int angle) {
 
 
 void Motion_C::lineSpeed() {
-	if (millis() > this->time + this->lineTimer) {
-		if (this->speed < this->reachingSpeed) {
+	// If it's time to line the speed when full speed is not reached yet, do it
+	if (millis() > this->time + this->lineTimer && this->speed != this->reachingSpeed) {
+		// When the difference between the reaching speed and the actual speed is big, reach it fast
+		// else, do it slowly
+		if (this->speed < this->reachingSpeed) { // When speed is going forwards
 			if (abs(this->reachingSpeed - this->speed) > 20) {
 				this->speed += 8;
 			} else {
 				this->speed += 1;
 			}
-		} else if (this->speed > this->reachingSpeed) {
+		} else if (this->speed > this->reachingSpeed) { // When speed is going backwards
 			if (abs(this->reachingSpeed - this->speed) > 20) {
 				this->speed -= 8;
 			} else {
 				this->speed -= 1;
 			}
 		}
+
+		// And don't forget what time it was...
+		// ...For the next round
 		this->time = millis();
 	}
 }
 
 
 void Motion_C::saveValues() {
+	// Save previous values to be aware of the future changes
 	this->previousSpeed = this->speed;
 	this->previousAngle = this->angle;
 }
 
 
 bool Motion_C::hasChanged() {
+	// Say yes and the motion has changed compared to the previous one, or say no.
 	if (this->speed != this->previousSpeed || this->angle != this->previousAngle) {
 		return true;
 	} else {

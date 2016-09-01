@@ -3,8 +3,6 @@
 
 // Program parameters
 
-#define DEBUG true
-
 #define USE_SOFTWARE_SERIAL false
 
 #define WIFI_SSID F("Theta")
