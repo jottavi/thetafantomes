@@ -11,12 +11,13 @@
 #define PLAYER_ID 1
 
 
-// WIFI
+// --------- WIFI
 
 #define WIFI_SSID F("Theta")
 #define WIFI_PASSWORD F("fant0m3s")
 #define SERVER_PORT 7110
 
+// IPs the plateforms are LISTENING to
 #if PLAYER_ID == 1
 	#define PLAYER_IP "192.168.168.101"
 	#define HOSTNAME "Alpha"
@@ -30,9 +31,10 @@
 	#define PLAYER_IP "192.168.168.104"
 	#define HOSTNAME "Tango"
 #endif
+#define MASTER_IP "192.168.168.100"
 
 
-// CONSTANTS
+// --------- CONSTANTS
 
 #define MAX_DISTANCE 400
 #define MAX_SPEED 10000
@@ -52,7 +54,7 @@
 #define SONAR10_ANGLE  -130
 
 
-// PINS
+// --------- PINS
 
 #define WIFI_RESET_PIN 6
 #define WIFI_LED_PIN 13

@@ -21,36 +21,45 @@ void Wifi_C::init() {
 	Serial3.begin(115200); // Serial connection to the wifi module (ESP8266)
 
 	while(1){
-		if(Serial3.available()) { // Wifi module, let's talk man.
+		// Wifi module, let's talk man.
+		if(Serial3.available()) {
+			// Store the message from the wifi module.
 			cache = Serial3.readStringUntil('\n');
 
-			if(cache.indexOf("Wifi chip ready") != -1) { // Waiting for the module to say that it's ready
+			// Waiting for the module to say that it's ready
+			if(cache.indexOf("Wifi chip ready") != -1) {
 				chipIsReady = true;
 			}
 
-			if(chipIsReady) { // Print the debug when it is relevant
+			// Print the debug when it is relevant
+			if(chipIsReady) {
 				Serial.println(cache);
 			}
 
-			if(cache.indexOf("SSID?") != -1) { // Wifi module is asking the SSID, tell it to him
+			if(cache.indexOf("SSID?") != -1) {
+				// Wifi module is asking the SSID, give it to him
 				Serial3.println(WIFI_SSID);
 				Serial.println(WIFI_SSID);
 				Serial.println();
-			} else if(cache.indexOf("PASSWORD?") != -1) { // Wifi module is asking the PASSWORD, tell it to him
+			} else if(cache.indexOf("PASSWORD?") != -1) {
+				// Wifi module is asking the PASSWORD, give it to him
 				Serial3.println(WIFI_PASSWORD);
 				Serial.println(WIFI_PASSWORD);
 				Serial.println();
-			} else if(cache.indexOf("SERVER_PORT?") != -1) { // Wifi module is asking the SERVER_PORT, tell it to him
+			} else if(cache.indexOf("SERVER_PORT?") != -1) {
+				// Wifi module is asking the SERVER_PORT, give it to him
 				Serial3.println(SERVER_PORT);
 				Serial.println(SERVER_PORT);
 				Serial.println();
-			} else if(cache.indexOf("HOSTNAME?") != -1) { // Wifi module is asking the SERVER_PORT, tell it to him
+			} else if(cache.indexOf("HOSTNAME?") != -1) {
+				// Wifi module is asking the HOSTNAME, give it to him
 				Serial3.println(HOSTNAME);
 				Serial.println(HOSTNAME);
 				Serial.println();
-			} else if (cache.indexOf("All OK") != -1) { // Let's rock
+			} else if (cache.indexOf("All OK") != -1) {
+				// Let's rock
 				Serial.println();
-				digitalWrite(WIFI_LED_PIN, HIGH); // LED is on
+				digitalWrite(WIFI_LED_PIN, HIGH); // LED is on, and telling that everything went through
 				break;
 			}
 		}

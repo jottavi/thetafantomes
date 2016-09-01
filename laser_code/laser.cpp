@@ -12,8 +12,11 @@ Laser_C::Laser_C(int deviceId, String playerIp) :
 
 
 void Laser_C::move(Motion_C& motion_) {
+	// Change the laser action only if the calculated motions have changed
 	if (motion_.hasChanged()) {
 		this->update(motion_);
+
+		// Backup the values for the next round
 		motion_.saveValues();
 	}
 }
@@ -24,12 +27,15 @@ void Laser_C::update(Motion_C motion_) {
 	int y = motion_.getY();
 	int speed = motion_.getSpeed();
 
+	// Change the laser's position
 	DmxSimple.write(this->CHANNELS.X, x);
 	DmxSimple.write(this->CHANNELS.Y, y);
+	DmxSimple.write(this->CHANNELS.SPEED, speed);
 }
 
 
 void Laser_C::init() {
+	// Initialize the laser DMX channels (see the Fat Beamer documentation)
 	DmxSimple.write(this->CHANNELS.SETUP, 192);
 	DmxSimple.write(this->CHANNELS.X, 191);
 	DmxSimple.write(this->CHANNELS.Y, 191);

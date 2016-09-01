@@ -1,3 +1,47 @@
+// Copyright (C) 2012, 2013 APO-33
+// This file is part of the Thêta Fantômes project.
+//
+// Thêta Fantômes is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Thêta Fantômes is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+//
+//
+//				                  `/shmNMMMMNmho:`                 
+//				                :hMms/-.`  `.-+yNNy.               
+//				              `hMh-              /mMo              
+//				             `mMo                 `yMy             
+//				             dMo                    hMs            
+//				            oMh   `oo`    `oo`      `mM/           
+//				           -MN.   mMMm    mMMm       -MN.          
+//				          -NM:    mMMm    mMMm        +Md.         
+//				      .+ymMd-     `++`    `++`         /mMmho:`    
+//				    /dMdo:`                              `-+yNNy.  
+//				  .dMh-                                       /NM/ 
+//				 `mM/                                          .NM:
+//				 yMs                                            +Mh
+//				 MM+-`                                          .MN
+//				 shdmMmy-                                     ..-MM
+//				     `/dMs                                /hNMNmmmd
+//				       `mM:                              yMh:`     
+//				        sMs                             /Md        
+//				        /Md                            `mM:        
+//				         hMds/-                       :dMo         
+//				          -+shNMd+`               :shNNy-          
+//				               .sMm-            .dMh+-             
+//				                 -NN:          /NN:                
+//				                  .dMh/-`  `-+dMd.                 
+//				                    -sdNMMMMmho-      
+//
+
+
 // ------------------------------------- INCLUDES -------------------------------------
 
 #include <Tone.h>
@@ -57,16 +101,20 @@ void setup() {
 
 void loop() {
 	// Update the motion values with the incoming message, line it
-	motion_.update(osc_); // motion.cpp - osc.cpp
+	// motion.cpp - osc.cpp
+	motion_.update(osc_);
 
 	// Invert direction when an object is in the way
-	sonars_.correct(motion_); // sonars.cpp - motion.cpp
+	// sonars.cpp - motion.cpp
+	sonars_.correct(motion_);
 
 	// Move according to the motion calculated and save it
-	motors_.move(motion_); // motors.cpp - motion.cpp
+	// motors.cpp - motion.cpp
+	motors_.move(motion_);
 }
 
 void serialEvent3() {
 	// Grab and parse the OSC message from the Serial
-	wifi_.receive(osc_); // wifi.cpp - osc.cpp
+	// wifi.cpp - osc.cpp
+	wifi_.receive(osc_);
 }

@@ -11,6 +11,7 @@ Motion_C::Motion_C() :
 
 
 void Motion_C::update(Osc_C osc_) {
+	// Grab the value and update x or y
 	String route = osc_.getRoute();
 	int value = osc_.getValue();
 
@@ -21,24 +22,25 @@ void Motion_C::update(Osc_C osc_) {
 	} else if (route == "/speed") {
 		this->setSpeed(value);
 	}
-
-	osc_.clean();
 }
 
 
 void Motion_C::setX(int x) {
+	// Calibrate the x position and update it
 	x = this->calibrateAxis(x);
 	this->x = x;
 }
 
 
 void Motion_C::setY(int y) {
+	// Calibrate the y position and update it
 	y = this->calibrateAxis(y);
 	this->y = y;
 }
 
 
 void Motion_C::setSpeed(int speed) {
+	// Calibrate the speed and update it
 	speed = this->calibrateSpeed(speed);
 	this->speed = speed;
 }
@@ -65,6 +67,7 @@ int Motion_C::calibrateSpeed(int speed) {
 		speed = 0;
 	}
 
+	// The value should start at 26 (see the Fat Beamer documentation)
 	return speed + 26;
 }
 
@@ -85,6 +88,7 @@ int Motion_C::getSpeed() const {
 
 
 void Motion_C::saveValues() {
+	// Save previous values to be aware of the future changes
 	this->previousX = this->x;
 	this->previousY = this->y;
 	this->previousSpeed = this->speed;
@@ -92,6 +96,7 @@ void Motion_C::saveValues() {
 
 
 bool Motion_C::hasChanged() {
+	// Say yes if the motion has changed compared to the previous one, or say no.
 	if (this->x != this->previousX || this->y != this->previousY || this->speed != this->previousSpeed) {
 		return true;
 	} else {

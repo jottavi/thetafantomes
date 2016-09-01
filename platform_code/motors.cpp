@@ -63,6 +63,7 @@ void Motors_C::move(Motion_C& motion_) {
 		this->updateDirection(motion_);
 		this->updateSpeed(motion_);
 
+		// Backup the values for the next round
 		motion_.saveValues();
 	}
 }

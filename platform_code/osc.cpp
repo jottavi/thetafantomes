@@ -25,11 +25,6 @@ void Osc_C::unpack(String cache) {
 	Serial.print(this->route);
 	Serial.print(" ");
 	Serial.println(this->value);
-
-	// and trash the message when you are done
-	if (this->ip != PLAYER_IP) {
-		this->clean();
-	}
 }
 
 

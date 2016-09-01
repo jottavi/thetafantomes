@@ -13,8 +13,8 @@ Motion_C::Motion_C() :
 
 
 void Motion_C::update(Osc_C osc_) {
-	// Is there any incoming message ?
-	if (osc_.getIp() != "") {
+	// Is the incoming message matching the right IP ?
+	if (osc_.getIp() == PLAYER_IP || osc_.getIp() == MASTER_IP) {
 		// Then grab the value and update the speed or the angle
 
 		String route = osc_.getRoute();
@@ -121,7 +121,7 @@ void Motion_C::saveValues() {
 
 
 bool Motion_C::hasChanged() {
-	// Say yes and the motion has changed compared to the previous one, or say no.
+	// Say yes if the motion has changed compared to the previous one, or say no.
 	if (this->speed != this->previousSpeed || this->angle != this->previousAngle) {
 		return true;
 	} else {
