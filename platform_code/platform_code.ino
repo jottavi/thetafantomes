@@ -59,7 +59,6 @@
 #include "osc.h"
 #include "motors.h"
 #include "motion.h"
-#include "sonars.h"
 
 
 // ------------------------------------- CLASS -------------------------------------
@@ -75,10 +74,6 @@ Motors_C motors_;
 Motion_C motion_;
 
 
-// Sensors
-Sonars_C sonars_;
-
-
 // ------------------------------------- SETUP -------------------------------------
 
 void setup() {
@@ -90,7 +85,6 @@ void setup() {
 
 	motors_.init(); // Setting up the motors pins
 	wifi_.init(); // Connecting to the wifi network
-	sonars_.init(); // Checking the sonars condition
 
 	Serial.println("****************************************************************");
 	Serial.println("*************************** Setup OK ***************************"); // Everything's up and running
@@ -104,10 +98,6 @@ void loop() {
 	// Update the motion values with the incoming message, line it
 	// motion.cpp - osc.cpp
 	motion_.update(osc_);
-
-	// Invert direction when an object is in the way
-	// sonars.cpp - motion.cpp
-	// sonars_.correct(motion_);
 
 	// Move according to the motion calculated and save it
 	// motors.cpp - motion.cpp

@@ -232,11 +232,11 @@ Une fois ces étapes réalisées, vous devez sélectionner certains paramètres 
 
 * Dans Arduino, allez dans *Outils > Type de Carte* et choisissez *"Generic ESP8266 Module"*.
 
-{{:carte-arduino-esp8266.png?direct&300|}}
+![Carte à selectionner](img/carte-arduino-esp8266.png)
 
 * Ensuite, lorsque le programmeur est branché, allez dans *Outils > Port* et choisissez *"/dev/cu.wchusbserial410"*.
 
-{{:port-arduino-esp8266.png?direct&300|}}
+![Port à selectionner](img/port-arduino-esp8266.png)
 
 * Vous pouvez uploader le code.
 
@@ -263,6 +263,13 @@ Pour installer une librairie arduino sur votre IDE, suivez [ce lien](https///www
 
 Schéma réalisé avec Fritzing.
 
+#### Uploader le bon player
+
+__*Dans le fichier \_init.h du code des plateformes, vous trouverez dans les premières lignes une macro appelée "PLAYER_ID".  
+En changeant cette ID par 1, 2, 3 ou 4, on change aussi le player contrôlant la plateforme.*__
+
+Chaque module Wifi correspond à une plateforme, dans le sens ou leur adresse MAC est fixée sur le routeur.
+
 #### Moteurs & Drivers
 
 ![DRV8825](img/drv8825.png)
@@ -278,7 +285,7 @@ On trouve différents types de circuits compatibles avec les shields des platefo
  4. Pololu A4988
  5. copies chinoises, à éviter, fonctionnent très mal
 
-__**/!\ ATTENTION, LES DRV8825 SE BRANCHE DANS LE SENS INVERSE DES POLOLU A4988, voir images ci-dessous /!\**__
+__*/!\ ATTENTION, LES DRV8825 SE BRANCHE DANS LE SENS INVERSE DES POLOLU A4988, voir images ci-dessous/!\ *__
 
 Une fois la plateforme sous tension, on doit tourner le potentiomètre sur le pololu pour augmenter l'ampérage de sortie et donc la puissance des moteurs. Il faut essayer de bouger la plateforme pour vérifier le niveau d'ampérage utilisé.  
 Cette manipulation doit s'effectuer avec un tourne vis en céramique pour ne pas abîmer les drivers (un tourne-vis en métal conduit le courant).
