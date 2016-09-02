@@ -3,10 +3,10 @@
 Motion_C::Motion_C() :
 	x(0),
 	y(0),
-	speed(196),
+	blink(196),
 	previousX(0),
 	previousY(0),
-	previousSpeed(196)
+	previousBlink(196)
 {}
 
 
@@ -19,8 +19,8 @@ void Motion_C::update(Osc_C osc_) {
 		this->setX(value);
 	} else if (route == "/y") {
 		this->setY(value);
-	} else if (route == "/speed") {
-		this->setSpeed(value);
+	} else if (route == "/blink") {
+		this->setBlink(value);
 	}
 }
 
@@ -39,10 +39,10 @@ void Motion_C::setY(int y) {
 }
 
 
-void Motion_C::setSpeed(int speed) {
-	// Calibrate the speed and update it
-	speed = this->calibrateSpeed(speed);
-	this->speed = speed;
+void Motion_C::setBlink(int blink) {
+	// Calibrate the blink and update it
+	blink = this->calibrateBlink(blink);
+	this->blink = blink;
 }
 
 
@@ -58,17 +58,17 @@ int Motion_C::calibrateAxis(int axis) {
 }
 
 
-int Motion_C::calibrateSpeed(int speed) {
-	// floor eventual overloading speed values
-	if (speed > 171) {
-		speed = 171;
+int Motion_C::calibrateBlink(int blink) {
+	// floor eventual overloading blink values
+	if (blink > 171) {
+		blink = 171;
 	}
-	else if (speed < 0) {
-		speed = 0;
+	else if (blink < 0) {
+		blink = 0;
 	}
 
 	// The value should start at 25 (see the Fat Beamer documentation)
-	return speed + 25;
+	return blink + 25;
 }
 
 
@@ -82,8 +82,8 @@ int Motion_C::getY() const {
 }
 
 
-int Motion_C::getSpeed() const {
-	return this->speed;
+int Motion_C::getBlink() const {
+	return this->blink;
 }
 
 
@@ -91,13 +91,13 @@ void Motion_C::saveValues() {
 	// Save previous values to be aware of the future changes
 	this->previousX = this->x;
 	this->previousY = this->y;
-	this->previousSpeed = this->speed;
+	this->previousBlink = this->blink;
 }
 
 
 bool Motion_C::hasChanged() {
 	// Say yes if the motion has changed compared to the previous one, or say no.
-	if (this->x != this->previousX || this->y != this->previousY || this->speed != this->previousSpeed) {
+	if (this->x != this->previousX || this->y != this->previousY || this->blink != this->previousBlink) {
 		return true;
 	} else {
 		return false;

@@ -10,7 +10,7 @@ typedef struct LaserChannels {
 	const int SETUP;
 	const int X;
 	const int Y;
-	const int SPEED;
+	const int BLINK;
 };
 
 class Laser_C {

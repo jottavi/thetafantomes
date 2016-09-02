@@ -11,22 +11,22 @@ class Motion_C {
 	void update(Osc_C osc_);
 	void setX(int x);
 	void setY(int y);
-	void setSpeed(int speed);
+	void setBlink(int blink);
 	int getX() const;
 	int getY() const;
-	int getSpeed() const;
+	int getBlink() const;
 	void saveValues();
 	bool hasChanged();
 
 	private:
 	int calibrateAxis(int axis);
-	int calibrateSpeed(int speed);
+	int calibrateBlink(int blink);
 	int x;
 	int y;
-	int speed;
+	int blink;
 	int previousX;
 	int previousY;
-	int previousSpeed;
+	int previousBlink;
 };
 
 #endif

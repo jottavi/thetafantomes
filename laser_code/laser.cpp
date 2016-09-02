@@ -25,12 +25,12 @@ void Laser_C::move(Motion_C& motion_) {
 void Laser_C::update(Motion_C motion_) {
 	int x = motion_.getX();
 	int y = motion_.getY();
-	int speed = motion_.getSpeed();
+	int speed = motion_.getBlink();
 
 	// Change the laser's position
 	DmxSimple.write(this->CHANNELS.X, x);
 	DmxSimple.write(this->CHANNELS.Y, y);
-	DmxSimple.write(this->CHANNELS.SPEED, speed);
+	DmxSimple.write(this->CHANNELS.BLINK, speed);
 }
 
 
@@ -41,7 +41,7 @@ void Laser_C::init() {
 	DmxSimple.write(this->CHANNELS.X, 0);
 	DmxSimple.write(this->CHANNELS.Y, 191);
 	DmxSimple.write(this->CHANNELS.Y, 0);
-	DmxSimple.write(this->CHANNELS.SPEED, 196);
+	DmxSimple.write(this->CHANNELS.BLINK, 196);
 }
 
 
